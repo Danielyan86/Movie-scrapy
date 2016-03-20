@@ -20,14 +20,14 @@ class MoviePipeline(object):
     def process_item(self, item, spider):
 
         if not self.movie_doc_collection.find({'mtime_url': item['mtime_url']}).count():
-            print("insert the moive into db")
+            print "insert the moive into db"
             m = self.year_pattern.search(item['movie_name'])
             year = m.groups()[0] if m else None
             m = self.name_pattern.search(item['movie_name'])
             name = m.groups()[0] if m else item['movie_name']
             result = self.movie_doc_collection.insert_one(
                 {"moive": name, 'year': year, 'mtime_url': item['mtime_url']})
-            print(result.inserted_id)
+            print result.inserted_id
         else:
-            print("movie is existing in db, jump it")
+            print "movie:{0} is existing in db, jump it".format(item['mtime_url'])
         return item
