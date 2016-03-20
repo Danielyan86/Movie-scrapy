@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'movie'
+BOT_NAME = 'American_TV'
 
-SPIDER_MODULES = ['movie.spiders']
-NEWSPIDER_MODULE = 'movie.spiders'
+SPIDER_MODULES = ['American_TV.spiders']
+NEWSPIDER_MODULE = 'American_TV.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -62,7 +62,7 @@ NEWSPIDER_MODULE = 'movie.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'movie.pipelines.MoviePipeline': 300,
+   'American_TV.pipelines.MoviePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
