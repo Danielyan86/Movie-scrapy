@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
 from scrapy.spider import BaseSpider
 from ..items import USTVItem
-from pymongo import MongoClient
 import urllib
 
-client = MongoClient()  # initialize mongo client
-db = client.movie_db  # access movie db
 
-
-class MtimeSpider(BaseSpider):
-    name = "dianyinggang"
+class WalkingDeadSpider(BaseSpider):
+    name = "walkingdead"
     allowed_domains = ["dygang.com/"]
     start_urls = [
         # "http://movie.mtime.com/movie/search/section/",
@@ -17,11 +13,29 @@ class MtimeSpider(BaseSpider):
     ]
 
     def parse(self, response):
-        movie_item = USTVItem()
+        wd_item = USTVItem()
+        a_tag_content = response.xpath('//a/@href').extract()
+        # for item in a_tag_content:
+        #     download_link = item.encode('UTF-8')
+        #     if "The.Walking.Dead" in download_link:
+        #         wd_item['down_load_links'].append(download_link)
+        wd_item['download_links'] = \
+            [item for item in a_tag_content if "The.Walking.Dead" in item.encode('utf-8')]
+        return wd_item
+
+
+class ShieldSpider(BaseSpider):
+    name = "shield"
+    allowed_domains = ["dygang.com/"]
+    start_urls = [
+        # "http://movie.mtime.com/movie/search/section/",
+        "http://www.dygang.com/yx/20150930/33060.htm"  # Shield
+    ]
+
+    def parse(self, response):
         a_tag_content = response.xpath('//a/@href').extract()
         for item in a_tag_content:
             download_link = item.encode('UTF-8')
-            if "The.Walking.Dead" in download_link:
-                with open("TV.txt", 'a+') as f:
-                    f.write("下载链接:" + urllib.unquote(download_link + '\n\n'))
-                    # print "==============", a_tag_content
+            if "dy131" in download_link:
+                with open("shield.html", 'a+') as f:
+                    f.write("下载链接: " + urllib.unquote(download_link + '\n\n'))

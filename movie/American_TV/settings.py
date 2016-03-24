@@ -62,7 +62,7 @@ NEWSPIDER_MODULE = 'American_TV.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'American_TV.pipelines.MoviePipeline': 300,
+   'American_TV.pipelines.TVPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

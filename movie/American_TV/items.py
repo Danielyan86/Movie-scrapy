@@ -8,8 +8,10 @@
 import scrapy
 from scrapy.item import Item, Field
 
+
 class USTVItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     name = Field()
-    mtime_url = Field()
+    download_links = Field()
+    time = Field()
