@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 
 
 def send_confirmation():
-    with open('TV.txt', 'r', encoding='utf-8') as f:
+    with open('shield.html', 'r') as f:
         content = f.readlines()
         print(content)
     text = ''
@@ -14,8 +14,11 @@ def send_confirmation():
         text = text + item
     sender = '516495459@qq.com'
     receiver = 'east.snow@163.com'
-    msg = MIMEText(text)
-    msg['Subject'] = "test email"
+    # receiver ="455323661@qq.com" #li qi jun
+    # receiver = 'meijutuisong@163.com'
+    # receiver = "493586337@qq.com"  # chen guo
+    msg = MIMEText(text, _charset='utf-8')
+    msg['Subject'] = "The walking dead link"
     msg['To'] = receiver
 
     try:
