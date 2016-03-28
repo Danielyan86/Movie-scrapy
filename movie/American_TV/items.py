@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy.item import Item, Field
+from scrapy.item import Field
 
 
 class USTVItem(scrapy.Item):
@@ -15,3 +15,7 @@ class USTVItem(scrapy.Item):
     name = Field()
     download_links = Field()
     time = Field()
+
+
+class PageItem(scrapy.Item):
+    page_link = Field()

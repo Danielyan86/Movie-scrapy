@@ -1,0 +1,2 @@
+scrapy shell <url>
+>>> response.xpath("//h2/text()").extract()[0]
