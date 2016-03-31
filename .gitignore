@@ -73,3 +73,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 .idea
+get_url_links_filter.py
