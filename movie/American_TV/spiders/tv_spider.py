@@ -22,21 +22,13 @@ class TVNameSpider(BaseSpider):
         page_link['page_link'] = a_tag
         return page_link
 
-        # print type(content)
-        # with open("TV_name.html", 'a+') as f:
-        #     f.write(urllib.unquote(content + '\n\n'))
-
-        # for item in a_tag_name:
-        #     name = item.encode('UTF-8')
-        #     with open("TV_name.html", 'a+') as f:
-        #         f.write("下载链接: " + urllib.unquote(name + '\n\n'))
-
 
 class WalkingDeadSpider(BaseSpider):
     name = "dyglinks"
     allowed_domains = ["dygang.com"]
     print get_links.get_all_tv_page_links_dianyinggang()
     start_urls = get_links.get_all_tv_page_links_dianyinggang()
+
     # start_urls = ["http://www.dygang.com/yx/20150930/33060.htm",
     #               'http://www.dygang.com/yx/20160319/34371.htm',
     #               'http://www.dygang.com/yx/20150922/32990.htm', ]
