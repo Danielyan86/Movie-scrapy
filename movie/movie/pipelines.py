@@ -42,7 +42,7 @@ class MoviePipeline(object):
                 {"moive": name, 'year': year, 'mtime_url': item['mtime_url']})
             logger.info(result.inserted_id)
         else:
-            print "movie:{0} is existing in db, jump it".format(item['mtime_url'])
+            logger.info("movie:{0} is existing in db, jump it".format(item['mtime_url']))
         return item
 
 

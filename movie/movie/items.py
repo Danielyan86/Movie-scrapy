@@ -13,7 +13,7 @@ class MtimeMovieItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     movie_name = Field()
-    mtime_urls = Field()
+    mtime_url = Field()
     image = Field()
 
 
