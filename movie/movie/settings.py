@@ -48,9 +48,11 @@ NEWSPIDER_MODULE = 'movie.spiders'
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'movie.middlewares.MyCustomDownloaderMiddleware': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    # 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware': 302
+    # 'movie.middlewares.MyCustomDownloaderMiddleware': 543,
+}
+DIRECT_ENABLED = False
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -88,3 +90,4 @@ IMAGES_MIN_WIDTH = 100
 # HTTPCACHE_DIR='httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES=[]
 # HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+meta = {'dont_redirect': True, 'handle_httpstatus_list': [302]}
