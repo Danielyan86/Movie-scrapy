@@ -32,7 +32,6 @@ class MoviePipeline(object):
     def process_item(self, item, spider):
 
         if not self.movie_doc_collection.find({'mtime_url': item['mtime_url']}).count():
-
             logger.info("insert the moive into db")
 
             m = self.year_pattern.search(item['movie_name'])
@@ -41,7 +40,6 @@ class MoviePipeline(object):
             name = m.groups()[0] if m else item['movie_name']
             result = self.movie_doc_collection.insert_one(
                 {"moive": name, 'year': year, 'mtime_url': item['mtime_url']})
-
             logger.info(result.inserted_id)
         else:
             logger.info("movie:{0} is existing in db, jump it".format(item['mtime_url']))
@@ -58,5 +56,4 @@ class MyImagesPipeline(ImagesPipeline):
         if not image_paths:
             raise DropItem("Item contains no images")
         item['image_paths'] = image_paths
-
         return item

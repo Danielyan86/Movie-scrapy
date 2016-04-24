@@ -6,7 +6,6 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-
 from scrapy.item import Field
 
 
@@ -15,7 +14,6 @@ class MtimeMovieItem(scrapy.Item):
     # name = scrapy.Field()
     movie_name = Field()
     mtime_url = Field()
-
     image = Field()
 
 

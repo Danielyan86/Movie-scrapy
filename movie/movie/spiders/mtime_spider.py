@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 from scrapy.spider import BaseSpider
-
 from ..items import MtimeMovieItem, ImageItem
 from pymongo import MongoClient
 from scrapy.selector import HtmlXPathSelector
 
 
-
 class MtimeSpider(BaseSpider):
     name = "mtime"
     allowed_domains = ["movie.mtime.com/"]
-
-
     start_urls = [
         # "http://movie.mtime.com/movie/search/section/",
         "http://movie.mtime.com/31889/"
@@ -19,7 +15,6 @@ class MtimeSpider(BaseSpider):
     ]
 
     for num in range(42000, 52000):
-
         start_urls.append("http://movie.mtime.com/{0}/".format(num))
 
     def parse(self, response):
@@ -29,7 +24,6 @@ class MtimeSpider(BaseSpider):
             movie_item['movie_name'] = movie_title
             movie_item['mtime_url'] = response.url
             return movie_item
-
 
 
 class MtimePhotoSpider(BaseSpider):
@@ -51,4 +45,3 @@ class MtimePhotoSpider(BaseSpider):
         item = ImageItem()
         item['image_urls'] = imgs
         return item
-
