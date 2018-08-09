@@ -14,4 +14,4 @@
 - scrapy crawl mPicture 
 - 注意需要修改setting 中的ITEM_PIPELINES配置为 movie.pipelines.MyImagesPipeline，
 - ITEM_PIPELINES中的IMAGES_STORE为图片文件保存路径
-- IMAGES_MIN_HEIGHT和IMAGES_MIN_WIDTH为图片筛选参数
+- IMAGES_MIN_HEIGHT和IMAGES_MIN_WIDTH为图片筛选参数,只有大于这个尺寸图片才会被保存在本地
