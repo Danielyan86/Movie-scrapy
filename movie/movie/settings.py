@@ -65,8 +65,9 @@ NEWSPIDER_MODULE = 'movie.spiders'
 # }
 
 # ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+# ITEM_PIPELINES = {'movie.pipelines.MoviePipeline': 1}
 ITEM_PIPELINES = {'movie.pipelines.MyImagesPipeline': 1}
-IMAGES_STORE = '/Users/xiaodong.yan/PycharmProjects/Movie-scrapy/movie/img_dir'
+IMAGES_STORE = '/Users/xyan/pycharm_project/Movie-scrapy/movie/images'
 IMAGES_EXPIRES = 30
 IMAGES_MIN_HEIGHT = 100
 IMAGES_MIN_WIDTH = 100

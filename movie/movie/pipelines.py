@@ -20,6 +20,7 @@ console.setFormatter(formatter)
 logger.addHandler(console)
 
 
+# 数据处理
 class MoviePipeline(object):
     year_pattern = re.compile(r'\((\d+)\)')
     name_pattern = re.compile(r'(.*)\(')
@@ -46,6 +47,7 @@ class MoviePipeline(object):
         return item
 
 
+# 图片处理
 class MyImagesPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
         for image_url in item['image_urls']:
