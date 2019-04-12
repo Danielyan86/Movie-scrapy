@@ -20,5 +20,5 @@
 - IMAGES_MIN_HEIGHT和IMAGES_MIN_WIDTH为图片筛选参数,只有大于这个尺寸图片才会被保存在本地
 ![movie_pictures](https://raw.githubusercontent.com/Danielyan86/Movie-scrapy/mtime/readme_pic/mtime_picture.jpg)
 
-## 详细文章
+## 更多详细介绍
 - https://zhuanlan.zhihu.com/p/41733996
