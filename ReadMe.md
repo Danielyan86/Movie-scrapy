@@ -7,7 +7,7 @@
 
 
 # 执行爬虫
-- 此程序有两个爬虫，一个mtime是爬取电影名字，年代和连接放入本地mongoDB，另外一个是下载图片到本地文件夹
+- 此程序有两个爬虫，一个mtime是爬取电影名字，年代和页面链接放入本地mongoDB，另外一个是下载图片到本地文件夹
 
 ## 运行数据爬虫 
 - scrapy crawl mtime 注意需要修改setting 中的ITEM_PIPELINES配置为movie.pipelines.MoviePipeline，
