@@ -1,10 +1,14 @@
 # 准备环境安装
-- 测试环境 MacOS python3
-- pip install scrapy 安装python 爬虫
-- sudo brew install mongodb 安装MongoDB 
-- 创建数据存储目录 sudo mkdir -p /data/db
-- 启动mongoDB sudo mongod
-
+- 测试环境 MacOS-10.15.4 
+- python 版本3.6.10
+- pip install -r requirements.txt
+## 安装MongoDB  
+- 安装文档 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+- the configuration file (/usr/local/etc/mongod.conf)
+- the log directory path (/usr/local/var/log/mongodb)
+- the data directory path (/usr/local/var/mongodb)
+### 运行
+- brew services start mongodb-community@4.2
 
 # 执行爬虫
 - 此程序有两个爬虫，一个mtime是爬取电影名字，年代和页面链接放入本地mongoDB，另外一个是下载图片到本地文件夹
